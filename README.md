@@ -6,7 +6,7 @@
 
 Built by **Henry Barton** for **NeVeRhOOd Academy**. Open-source orchestration for Aegis and other compatible models. **No proprietary model weights, private execution paths, account credentials or cloud provisioning included.**
 
-[![Go CI](https://github.com/tooljhlb/NeVeRhOOd-aegis-Wizards-Wands/actions/workflows/verify.yml/badge.svg)](https://github.com/tooljhlb/NeVeRhOOd-aegis-Wizards-Wands/actions/workflows/verify.yml) · [MIT License](LICENSE) · [Sponsor development](https://github.com/sponsors/tooljhlb)
+[Verification workflow](https://github.com/tooljhlb/NeVeRhOOd-aegis-Wizards-Wands/actions/workflows/verify.yml) · [MIT License](LICENSE) · [Sponsor development](https://github.com/sponsors/tooljhlb)
 
 ## The control plane for your AI
 
@@ -108,7 +108,7 @@ For managed streaming chat, create a session using `POST /api/sessions` and send
 - The built-in web fetcher blocks private/reserved IPs, redirects and untrusted URL schemes, and never runs JavaScript.
 - File attachments are locally stored, 16 MiB maximum. Generation and playback of video/music require external services and real codec tooling.
 - MCP support covers tool discovery/calls over Streamable HTTP, **not complete MCP conformance** or imported ChatGPT plugin access.
-- `go test -race ./...`, `go vet ./...` and a Go build passed during development. The published GitHub Actions workflow independently checks the public revision; inspect its status rather than assuming it passed.
+- `go test -race ./...`, `go vet ./...` and a Go build passed during development. The published GitHub Actions workflow is present, but its first run ended before executing test steps; public CI remains unverified. The local source build and test suite passed separately.
 
 [Security and trust model](docs/SECURITY.md) · [Workflows](docs/WORKFLOWS.md) · [Architecture](docs/ARCHITECTURE.md) · [Connectors](docs/CONNECTORS.md)
 
