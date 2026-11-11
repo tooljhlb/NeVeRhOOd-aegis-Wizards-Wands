@@ -1,0 +1,16 @@
+.ww-data/
+.env
+.env.*
+!config.example.json
+config.json
+*.db
+*.sqlite*
+*.key
+*.pem
+*.pfx
+*.pt
+*.gguf
+*.bin
+*.ipynb
+/ww
+/dist/

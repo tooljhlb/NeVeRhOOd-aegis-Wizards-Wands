@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "purpose": "Discovery templates, not bundled credentials, endpoints, installed plugins or active connections.",
+  "transport": "Configure user-owned MCP Streamable HTTP endpoints in config.json; provider availability and authentication are independently managed.",
+  "providers": [
+    {"name": "GitHub", "category": "source control", "suggested_tools": ["repositories", "issues", "pull requests", "code review"]},
+    {"name": "GitLab", "category": "source control", "suggested_tools": ["merge requests", "projects", "CI"]},
+    {"name": "Hugging Face", "category": "AI models", "suggested_tools": ["models", "datasets", "spaces"]},
+    {"name": "Google Drive", "category": "files", "suggested_tools": ["files", "docs", "sheets", "slides"]},
+    {"name": "Gmail", "category": "communication", "suggested_tools": ["email search", "drafts", "send with approval"]},
+    {"name": "Figma", "category": "design", "suggested_tools": ["design files", "components", "screens"]},
+    {"name": "Vercel", "category": "deployment", "suggested_tools": ["deployments", "logs", "projects"]},
+    {"name": "Replit", "category": "cloud development", "suggested_tools": ["projects", "apps", "builds"]},
+    {"name": "Lovable", "category": "app building", "suggested_tools": ["projects", "code generation"]},
+    {"name": "Base44", "category": "app building", "suggested_tools": ["projects", "app workflows"]},
+    {"name": "Remote Desktop Commander", "category": "local automation", "suggested_tools": ["authorized files", "terminal", "process status"]},
+    {"name": "TinyFish", "category": "browser automation", "suggested_tools": ["web navigation", "workflows"]},
+    {"name": "PostHog", "category": "analytics", "suggested_tools": ["events", "flags", "experiments"]},
+    {"name": "GSC Wizard", "category": "SEO", "suggested_tools": ["search performance", "queries", "pages"]},
+    {"name": "Windsor.ai", "category": "marketing", "suggested_tools": ["marketing sources", "reports"]},
+    {"name": "Undermind", "category": "research", "suggested_tools": ["papers", "literature", "summaries"]},
+    {"name": "vidIQ", "category": "creator", "suggested_tools": ["video research", "content ideas"]},
+    {"name": "LinkedIn", "category": "people lookup", "suggested_tools": ["professional discovery"]},
+    {"name": "Blockscout Blockchain Data", "category": "blockchain", "suggested_tools": ["on-chain queries", "contracts"]},
+    {"name": "Acumen by Talarion", "category": "information intelligence", "suggested_tools": ["research context"]},
+    {"name": "Automations", "category": "scheduling", "suggested_tools": ["reminders", "scheduled checks"]},
+    {"name": "Plugin Creator", "category": "tool development", "suggested_tools": ["tool definitions", "integrations"]},
+    {"name": "Plugin Management", "category": "tool discovery", "suggested_tools": ["connector directory", "capability discovery"]}
+  ]
+}

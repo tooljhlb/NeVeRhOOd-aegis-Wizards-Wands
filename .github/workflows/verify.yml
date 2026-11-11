@@ -1,0 +1,35 @@
+name: Go harness verification
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: Check formatting
+        run: test -z "$(gofmt -l *.go)"
+      - name: Unit and integration tests
+        run: go test -race -count=1 ./...
+      - name: Static analysis
+        run: go vet ./...
+      - name: Build
+        run: go build -o /tmp/wizards-wands .
+      - name: Public source boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          if find . -name '*.ipynb' -o -name '*.pem' -o -name '*.key' | grep -q .; then
+            echo 'Unexpected private or notebook file' >&2; exit 1
+          fi
+          if grep -rniE 'drive\.google\.com|aegis-env-master|muse-colab-system|GeneralAegis-Flagship' \
+            --include='*.go' --include='*.json' --include='*.md' --exclude-dir=.git .; then
+            echo 'Unexpected internal source reference' >&2; exit 1
+          fi

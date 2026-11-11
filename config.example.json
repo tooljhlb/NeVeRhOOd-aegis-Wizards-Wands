@@ -1,0 +1,14 @@
+{
+  "listen": "127.0.0.1:8787",
+  "data_dir": "./.ww-data",
+  "default_model": "demo",
+  "max_steps": 6,
+  "models": [
+    {"name": "demo", "provider": "demo", "model": "demo"},
+    {"name": "ollama", "provider": "openai-compatible", "base_url": "http://127.0.0.1:11434/v1", "model": "llama3.2"},
+    {"name": "lmstudio", "provider": "openai-compatible", "base_url": "http://127.0.0.1:1234/v1", "model": "local-model"},
+    {"name": "openai", "provider": "openai-compatible", "base_url": "https://api.openai.com/v1", "model": "gpt-4.1-mini", "api_key_env": "OPENAI_API_KEY"}
+  ],
+  "mcp_servers": [],
+  "data_frameworks": {"base_url": "", "api_key_env": "AEGIS_DATA_TOKEN"}
+}

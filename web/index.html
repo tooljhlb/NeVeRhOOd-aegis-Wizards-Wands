@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#080d15"><title>Wizards & Wands · NeVeRhOOd Academy</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<div class="shell">
+ <aside class="sidebar">
+  <header class="brand"><div class="sigil">✦</div><div><strong>Wizards <span>&</span> Wands</strong><small>NeVeRhOOd Academy</small></div></header>
+  <button class="new" id="new"><span>＋</span> New conversation</button>
+  <div class="side-section">WORKSPACES <span class="dot"></span></div>
+  <div id="sessions" class="sessions"></div>
+  <div class="side-bottom"><div class="integration"><div class="integration-dot"></div><div><b>AEGIS DATA</b><small id="dataState">External adapter</small></div></div>
+  <button class="subtle" id="settings">⚙ Connection settings</button></div>
+ </aside>
+ <main class="center">
+  <header class="toolbar"><div class="project"><span class="tiny-logo">✧</span> NEVErHooD <span class="pipe">/</span> AI Control Plane <span class="version">ALPHA 0.1</span></div><div class="toolbar-right"><span class="live"><i></i>LOCAL FIRST</span></div></header>
+  <section class="workspace-title"><div class="kicker">AGENTIC WORKSPACE <span class="line"></span> AUTONOMOUS ENGINEERING</div><h1>Think. Build. <em>Execute.</em></h1><p>One command center for models, agents, tools and workflows.</p></section>
+  <section class="controls"><label>MODEL<select id="model"></select></label><label>WORKFLOW<select id="mode"><option value="chat">Chat</option><option value="assisted">Assisted</option><option value="autopilot">Autopilot</option><option value="research">Research</option><option value="code">Engineering</option><option value="media">Media studio</option></select></label><label>REASONING<select id="thinking"><option value="auto">Auto-select</option><option value="low">Low</option><option value="medium">Medium</option><option value="high">High</option></select></label><div id="busy" class="busy" aria-live="polite">READY</div></section>
+  <div id="messages" class="messages" aria-live="polite"><div class="empty"><div class="glyph">✦</div><strong>What are we building today?</strong><p>Delegate complex tasks, call connected tools, or explore ideas with any supported model.</p><div class="suggestions"><button data-prompt="Analyze the architecture of my application and propose a testable plan.">Architecture review</button><button data-prompt="Help me design a multi-agent research workflow with approval gates.">Agent orchestration</button><button data-prompt="[tool:clock.now]">Test a tool call</button></div></div></div>
+  <div id="approval" class="approval hidden"><b>Approval required</b><p id="approvalText"></p><div class="actions"><button id="reject">Reject</button><button id="approve">Approve this action</button></div></div>
+  <div class="composer-wrap"><div id="artifactTag" class="artifact-tag hidden"></div><div class="composer"><textarea id="prompt" rows="2" placeholder="Ask, delegate, or describe a workflow…" aria-label="Your message"></textarea><div class="composer-bottom"><div class="left-actions"><label class="attach" title="Attach a file"><input id="file" type="file" hidden>＋ Add file</label><span>↵ Enter to send</span></div><div><button class="stop hidden" id="stop">■ Stop</button><button class="send" id="send">Execute <span>↗</span></button></div></div></div><div class="smallprint">Tools can act on external systems. Side-effecting actions require explicit permission.</div></div>
+ </main>
+ <aside class="right"><div class="right-head"><div><div class="kicker">LIVE TELEMETRY</div><h2>Activity feed</h2></div><span class="feed-icon">⌁</span></div><div id="feed" class="feed"><div class="feed-item"><span class="bullet"></span><div><b>System ready</b><small>Waiting for first execution event</small></div></div></div><div class="right-bottom"><div class="right-head"><h2>Tool registry</h2><span class="tool-icon">⬡</span></div><div id="tools" class="tools"></div><div class="hint">MCP adapters and model connections are configured locally. No credentials are bundled with this application.</div></div></aside>
+</div>
+<div id="connect" class="modal hidden" role="dialog" aria-modal="true" aria-label="Connection settings"><div class="modal-inner"><div class="modal-top"><h2>Connect to your harness</h2><button id="closeSettings" aria-label="Close">×</button></div><p>Your API token is shown in the terminal when the server starts, or set via <code>WW_TOKEN</code>. It stays in this browser session.</p><label class="token-label">LOCAL API TOKEN<input id="token" type="password" autocomplete="off" placeholder="Paste the local token"></label><button id="saveToken" class="primary">Connect</button><small id="connectError"></small></div></div>
+<script src="/app.js" defer></script>
+</body></html>
